@@ -1,0 +1,591 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:cadoj="http://doj.ca.gov/niem/PreBooking/Extension/1.0" xmlns:cadojPreBookingcodes="http://doj.ca.gov/niem/PreBooking/Codes/1.0" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:j="http://niem.gov/niem/domains/jxdm/4.0" targetNamespace="http://doj.ca.gov/niem/PreBooking/Extension/1.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1">
+	<!-- Import namespaces -->
+	<xsd:import namespace="http://niem.gov/niem/structures/2.0" schemaLocation="..\PreBooking\niem\structures\2.0\structures.xsd"/>
+	<xsd:import namespace="http://niem.gov/niem/niem-core/2.0" schemaLocation="..\PreBooking\niem\niem-core\2.0\niem-core.xsd"/>
+	<xsd:import namespace="http://niem.gov/niem/proxy/xsd/2.0" schemaLocation="..\PreBooking\niem\proxy\xsd\2.0\xsd.xsd"/>
+	<xsd:import namespace="http://niem.gov/niem/domains/jxdm/4.0" schemaLocation="..\PreBooking\niem\domains\jxdm\4.0\jxdm.xsd"/>
+	<xsd:import namespace="http://doj.ca.gov/niem/PreBooking/Codes/1.0" schemaLocation="..\PreBooking\codes-schema.xsd"/>
+	<!-- Type definitions for Extensions -->
+	<xsd:complexType name="SignatureType">
+		<xsd:annotation>
+			<xsd:documentation>A data type for the collection of signature artifacts.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ComplexObjectType">
+				<xsd:sequence>
+					<xsd:element ref="nc:PersonDigitizedSignatureImage" minOccurs="0"/>
+					<xsd:element ref="cadoj:SignatureDate" minOccurs="0"/>
+					<xsd:element ref="nc:PersonFullName" minOccurs="0"/>
+					<xsd:element ref="j:CourtOrderSignatureMethodText" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="SubjectType">
+		<xsd:annotation>
+			<xsd:documentation>A data type for the Subjects Information</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="j:SubjectType">
+				<xsd:sequence>
+					<xsd:element ref="cadoj:Signature"/>
+					<xsd:element ref="cadoj:Student"/>
+					<xsd:element ref="nc:PersonGangAssociation"/>
+					<xsd:element ref="cadoj:ResidenceAddress"/>
+					<xsd:element ref="nc:Address"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="StudentType">
+		<xsd:annotation>
+			<xsd:documentation>A data type for a Student Information</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ComplexObjectType">
+				<xsd:sequence>
+					<xsd:element ref="cadoj:StudentFlag"/>
+					<xsd:element ref="cadoj:StudentDuration"/>
+					<xsd:element ref="nc:PersonGangAssociation"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<!-- Generated IEPD Type Extensions Start Here -->
+	<xsd:complexType name="EnforcementOfficialType">
+		<xsd:annotation>
+			<xsd:documentation>A data type Arrest </xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="j:EnforcementOfficialType">
+				<xsd:sequence>
+					<xsd:element ref="nc:PersonName"/>
+					<xsd:element ref="cadoj:Signature"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="ArrestType">
+		<xsd:annotation>
+			<xsd:documentation>A data type Arrest </xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="j:ArrestType">
+				<xsd:sequence>
+					<xsd:element ref="cadoj:ArrestLocation"/>
+					<xsd:element ref="cadoj:ArrestDate"/>
+					<xsd:element ref="cadoj:ArrestTime"/>
+					<xsd:element ref="cadoj:ArrestAgency"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="ArrestAgencyType">
+		<xsd:annotation>
+			<xsd:documentation>A data type ArrestAgency </xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ComplexObjectType">
+				<xsd:sequence>
+					<xsd:element ref="cadoj:AgencyName"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="BookingType">
+		<xsd:annotation>
+			<xsd:documentation>A data type Booking </xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="j:BookingType">
+				<xsd:sequence>
+					<xsd:element ref="cadoj:ReleaseDate"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="CaseType">
+		<xsd:annotation>
+			<xsd:documentation>A data type Case </xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="nc:CaseType">
+				<xsd:sequence>
+					<xsd:element ref="j:CaseSeverityText"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="CourtType">
+		<xsd:annotation>
+			<xsd:documentation>A data type Court </xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="j:CourtType">
+				<xsd:sequence>
+					<xsd:element ref="cadoj:DestinationCourtName"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="EmployerType">
+		<xsd:annotation>
+			<xsd:documentation>A data type Employer </xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ComplexObjectType">
+				<xsd:sequence>
+					<xsd:element ref="nc:OrganizationName"/>
+					<xsd:element ref="nc:StructuredAddress"/>
+					<xsd:element ref="nc:TelephoneNumber"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="HoldType">
+		<xsd:annotation>
+			<xsd:documentation>A data type Hold </xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ComplexObjectType">
+				<xsd:sequence>
+					<xsd:element ref="cadoj:HoldDescription"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="HoldingAgencyType">
+		<xsd:annotation>
+			<xsd:documentation>A data type HoldingAgency </xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ComplexObjectType">
+				<xsd:sequence>
+					<xsd:element ref="nc:OrganizationName"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="NextOfKinType">
+		<xsd:annotation>
+			<xsd:documentation>A data type NextOfKin </xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ComplexObjectType">
+				<xsd:sequence>
+					<xsd:element ref="nc:PersonName"/>
+					<xsd:element ref="cadoj:NextOfKinRelationship"/>
+					<xsd:element ref="nc:StructuredAddress"/>
+					<xsd:element ref="nc:TelephoneNumber"/>
+					<xsd:element ref="cadoj:WorkTelephoneNumber"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="PersonalInventoryType">
+		<xsd:annotation>
+			<xsd:documentation>A data type PersonalInventory </xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ComplexObjectType">
+				<xsd:sequence>
+					<xsd:element ref="cadoj:OneDollarBillCount"/>
+					<xsd:element ref="cadoj:TwoDollarBillCount"/>
+					<xsd:element ref="cadoj:FiveDollarBillCount"/>
+					<xsd:element ref="cadoj:TenDollarBillCount"/>
+					<xsd:element ref="cadoj:TwentyDollarBillCount"/>
+					<xsd:element ref="cadoj:FiftyDollarBillCount"/>
+					<xsd:element ref="cadoj:HundredDollarBillCount"/>
+					<xsd:element ref="cadoj:TotalDollarAmount"/>
+					<xsd:element ref="cadoj:WalletFlag"/>
+					<xsd:element ref="cadoj:PurseFlag"/>
+					<xsd:element ref="cadoj:CellPhoneFlag"/>
+					<xsd:element ref="cadoj:BeltFlag"/>
+					<xsd:element ref="cadoj:GlassesFlag"/>
+					<xsd:element ref="cadoj:KeysFlag"/>
+					<xsd:element ref="cadoj:ShoesFlag"/>
+					<xsd:element ref="cadoj:MedicationsFlag"/>
+					<xsd:element ref="cadoj:WatchFlag"/>
+					<xsd:element ref="cadoj:RingFlag"/>
+					<xsd:element ref="cadoj:NecklaceFlag"/>
+					<xsd:element ref="cadoj:EarringsFlag"/>
+					<xsd:element ref="cadoj:OtherItemsText"/>
+					<xsd:element ref="cadoj:SealedPropertyBagFlag"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="SchoolType">
+		<xsd:annotation>
+			<xsd:documentation>A data type School </xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ComplexObjectType">
+				<xsd:sequence>
+					<xsd:element ref="nc:OrganizationName"/>
+					<xsd:element ref="nc:StructuredAddress"/>
+					<xsd:element ref="nc:TelephoneNumber"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="TransportingOfficerType">
+		<xsd:annotation>
+			<xsd:documentation>A data type TransportingOfficer </xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ComplexObjectType">
+				<xsd:sequence>
+					<xsd:element ref="j:EnforcementOfficialBadgeIdentification"/>
+					<xsd:element ref="nc:PersonName"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="VehicleType">
+		<xsd:annotation>
+			<xsd:documentation>A data type Vehicle </xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ComplexObjectType">
+				<xsd:sequence>
+					<xsd:element ref="cadoj:LocationDescription"/>
+					<xsd:element ref="cadoj:KeysLeftInVehicleFlag"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="VehicleTowingCompanyType">
+		<xsd:annotation>
+			<xsd:documentation>A data type VehicleTowingCompany </xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ComplexObjectType">
+				<xsd:sequence>
+					<xsd:element ref="nc:OrganizationName"/>
+					<xsd:element ref="nc:StructuredAddress"/>
+					<xsd:element ref="nc:TelephoneNumber"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="WarrantType">
+		<xsd:annotation>
+			<xsd:documentation>A data type Warrant </xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ComplexObjectType">
+				<xsd:sequence>
+					<xsd:element ref="cadoj:WarrantNoBailFlag"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="WarrantAgencyType">
+		<xsd:annotation>
+			<xsd:documentation>A data type WarrantAgency </xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ComplexObjectType">
+				<xsd:sequence>
+					<xsd:element ref="cadoj:WarrantAgencyIdentificatonNumber"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<!-- Generated IEPD Type Extensions End Here -->
+	<!-- Global Element Deffinitions -->
+	<xsd:element name="Signature" type="cadoj:SignatureType">
+		<xsd:annotation>
+			<xsd:documentation>Artifacts of a signature.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="SignatureDate" type="niem-xsd:dateTime">
+		<xsd:annotation>
+			<xsd:documentation>Date of signiture.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<!-- Generated IEPD Attributes Start Here -->
+	<xsd:element name="ArrestLocation" type="nc:AddressType">
+		<xsd:annotation>
+			<xsd:documentation>A description text field of the arrest location.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ArrestDate" type="nc:DateType">
+		<xsd:annotation>
+			<xsd:documentation>Date of an arrest.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ArrestTime" type="xsd:time">
+		<xsd:annotation>
+			<xsd:documentation>Time of an arrest in a 24 hour clock.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ArrestAgency" type="cadoj:ArrestAgencyType">
+		<xsd:annotation>
+			<xsd:documentation>Instantiation of Information for ArrestAgency</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="AgencyName" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>The name of the arresting agency.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="OfficerIdentification" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>Unique badge identifier of an arresting officer; Also known as the identification number of a law enforcement officer.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ReleaseDate" type="nc:DateType">
+		<xsd:annotation>
+			<xsd:documentation>The date of the release.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="DestinationCourtName" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>The destination court for the arrested subject.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Employer" type="cadoj:EmployerType">
+		<xsd:annotation>
+			<xsd:documentation>Instantiation of Information for Employer</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Student" type="cadoj:StudentType">
+		<xsd:annotation>
+			<xsd:documentation>Instantiation of Information for Student</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Hold" type="cadoj:HoldType">
+		<xsd:annotation>
+			<xsd:documentation>Instantiation of Information for Hold</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="HoldDescription" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>A description of the type of hold placed on an arrested subject.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="HoldingAgency" type="cadoj:HoldingAgencyType">
+		<xsd:annotation>
+			<xsd:documentation>Instantiation of Information for HoldingAgency</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="NextOfKin" type="cadoj:NextOfKinType">
+		<xsd:annotation>
+			<xsd:documentation>Instantiation of Information for NextOfKin</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="NextOfKinRelationship" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>The relationship of the  nearest relative to the arrested subject's</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="WorkTelephoneNumber" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>Complex element contains all of the components associated with the work telephone number of the arrested subject's nearest relative</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PersonalInventory" type="cadoj:PersonalInventoryType">
+		<xsd:annotation>
+			<xsd:documentation>Instantiation of Information for PersonalInventory</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="OneDollarBillCount" type="xsd:integer">
+		<xsd:annotation>
+			<xsd:documentation>The number of one dollar bills on arrested subject.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="TwoDollarBillCount" type="xsd:integer">
+		<xsd:annotation>
+			<xsd:documentation>The number of two dollar bills on arrested subject.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="FiveDollarBillCount" type="xsd:integer">
+		<xsd:annotation>
+			<xsd:documentation>The number of five dollar bills on arrested subject.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="TenDollarBillCount" type="xsd:integer">
+		<xsd:annotation>
+			<xsd:documentation>The number of ten dollar bills on arrested subject.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="TwentyDollarBillCount" type="xsd:integer">
+		<xsd:annotation>
+			<xsd:documentation>The number of twenty dollar bills on arrested subject.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="FiftyDollarBillCount" type="xsd:integer">
+		<xsd:annotation>
+			<xsd:documentation>The number of fifty dollar bills on arrested subject.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="HundredDollarBillCount" type="xsd:integer">
+		<xsd:annotation>
+			<xsd:documentation>The number of hundred dollar bills on arrested subject.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="TotalDollarAmount" type="xsd:integer">
+		<xsd:annotation>
+			<xsd:documentation>The total dollar amount of cash property on arrested subject at time of arrest.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="WalletFlag" type="cadojPreBookingcodes:YesNoType">
+		<xsd:annotation>
+			<xsd:documentation>Indicator as to whether or not the arrested subject possessed a wallet.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PurseFlag" type="cadojPreBookingcodes:YesNoType">
+		<xsd:annotation>
+			<xsd:documentation>Indicator as to whether or not the arrested subject possessed a purse.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="CellPhoneFlag" type="cadojPreBookingcodes:YesNoType">
+		<xsd:annotation>
+			<xsd:documentation>Indicator as to whether or not the arrested subject possessed a cell phone.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="BeltFlag" type="cadojPreBookingcodes:YesNoType">
+		<xsd:annotation>
+			<xsd:documentation>Indicator as to whether or not the arrested subject possessed a belt.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="GlassesFlag" type="cadojPreBookingcodes:YesNoType">
+		<xsd:annotation>
+			<xsd:documentation>Indicator as to whether or not the arrested subject possessed glasses.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="KeysFlag" type="cadojPreBookingcodes:YesNoType">
+		<xsd:annotation>
+			<xsd:documentation>Indicator as to whether or not the arrested subject possessed keys.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ShoesFlag" type="cadojPreBookingcodes:YesNoType">
+		<xsd:annotation>
+			<xsd:documentation>Indicator as to whether or not the arrested subject possessed shoes.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="MedicationsFlag" type="cadojPreBookingcodes:YesNoType">
+		<xsd:annotation>
+			<xsd:documentation>Indicator as to whether or not the arrested subject possessed medications.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="WatchFlag" type="cadojPreBookingcodes:YesNoType">
+		<xsd:annotation>
+			<xsd:documentation>Indicator as to whether or not the arrested subject possessed a watch.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="RingFlag" type="cadojPreBookingcodes:YesNoType">
+		<xsd:annotation>
+			<xsd:documentation>Indicator as to whether or not the arrested subject possessed a ring.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="NecklaceFlag" type="cadojPreBookingcodes:YesNoType">
+		<xsd:annotation>
+			<xsd:documentation>Indicator as to whether or not the arrested subject possessed a necklace.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="EarringsFlag" type="cadojPreBookingcodes:YesNoType">
+		<xsd:annotation>
+			<xsd:documentation>Indicator as to whether or not the arrested subject possessed earrings.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="OtherItemsText" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>Additional remarks and descriptions of property items.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="SealedPropertyBagFlag" type="cadojPreBookingcodes:YesNoType">
+		<xsd:annotation>
+			<xsd:documentation>Indicator as to whether or not the arrested subject's possessions were delivered in a sealed bag.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="School" type="cadoj:SchoolType">
+		<xsd:annotation>
+			<xsd:documentation>Instantiation of Information for School</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="DriverLicenseIssuingState" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>The state or province code of an individual's driver's license.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ResidenceAddress" type="nc:AddressType">
+		<xsd:annotation>
+			<xsd:documentation>The full address of the person who was arrested</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ResidenceTelephoneNumber" type="nc:TelephoneNumberType">
+		<xsd:annotation>
+			<xsd:documentation>Complex element contains all of the components associated with the telephone of the arrested subject's current residence</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="OtherTelephoneNumber" type="nc:TelephoneNumberType">
+		<xsd:annotation>
+			<xsd:documentation>Complex element contains all of the components associated with an alternate telephone number of the arrested subject</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="OccupationDescription" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>A description of the arrested subject's type of work</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PartTimeEmploymentFlag" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>An indicator that the arrested subject is employed part time</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="StudentFlag" type="cadojPreBookingcodes:YesNoType">
+		<xsd:annotation>
+			<xsd:documentation>Indicator that the arrested subject is a student</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="StudentDuration" type="xsd:integer">
+		<xsd:annotation>
+			<xsd:documentation>Number of months the arrested subject has been a student</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="TransportingOfficer" type="cadoj:TransportingOfficerType">
+		<xsd:annotation>
+			<xsd:documentation>Instantiation of Information for TransportingOfficer</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Vehicle" type="cadoj:VehicleType">
+		<xsd:annotation>
+			<xsd:documentation>Instantiation of Information for Vehicle</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="LocationDescription" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>The current location of the arrested subject's vehicle</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="KeysLeftInVehicleFlag" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>Indicator as to whether the keys for the Arrested Subject's vehicle were left inside the vehicle</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehicleTowingCompany" type="cadoj:VehicleTowingCompanyType">
+		<xsd:annotation>
+			<xsd:documentation>Instantiation of Information for VehicleTowingCompany</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="WarrantNoBailFlag" type="cadojPreBookingcodes:YesNoType">
+		<xsd:annotation>
+			<xsd:documentation>Indicates whether "no bail" is allowed for the warrant.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="WarrantAgency" type="cadoj:WarrantAgencyType">
+		<xsd:annotation>
+			<xsd:documentation>Instantiation of Information for WarrantAgency</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="WarrantAgencyIdentificatonNumber" type="nc:IdentificationType">
+		<xsd:annotation>
+			<xsd:documentation>Describes the agency (e.g., law enforcement, DA) originating the warrant request.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<!-- Generated IEPD Attributes End Here -->
+</xsd:schema>

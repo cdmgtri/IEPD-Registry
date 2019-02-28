@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:cadoj="http://doj.ca.gov/niem/NoticeParoleHrg/Extension/1.0" xmlns:cadojNoticeParoleHrgcodes="http://doj.ca.gov/niem/NoticeParoleHrg/Codes/1.0" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:j="http://niem.gov/niem/domains/jxdm/4.0" xmlns:scr="http://niem.gov/niem/domains/screening/2.0" xmlns:fips_6-4="http://niem.gov/niem/fips_6-4/2.0" targetNamespace="http://doj.ca.gov/niem/NoticeParoleHrg/Extension/1.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1">
+	<!-- Import namespaces -->
+	<xsd:import namespace="http://niem.gov/niem/structures/2.0" schemaLocation="..\NoticeParoleHrg\niem\structures\2.0\structures.xsd"/>
+	<xsd:import namespace="http://niem.gov/niem/niem-core/2.0" schemaLocation="..\NoticeParoleHrg\niem\niem-core\2.0\niem-core.xsd"/>
+	<xsd:import namespace="http://niem.gov/niem/proxy/xsd/2.0" schemaLocation="..\NoticeParoleHrg\niem\proxy\xsd\2.0\xsd.xsd"/>
+	<xsd:import namespace="http://niem.gov/niem/domains/jxdm/4.0" schemaLocation="..\NoticeParoleHrg\niem\domains\jxdm\4.0\jxdm.xsd"/>
+	<xsd:import namespace="http://niem.gov/niem/domains/screening/2.0" schemaLocation="..\NoticeParoleHrg\niem\domains\screening\2.0\screening.xsd"/>
+	<xsd:import namespace="http://niem.gov/niem/fips_6-4/2.0" schemaLocation="..\NoticeParoleHrg\niem\fips_6-4\2.0\fips_6-4.xsd"/>
+	<xsd:import namespace="http://doj.ca.gov/niem/NoticeParoleHrg/Codes/1.0" schemaLocation="..\NoticeParoleHrg\codes-schema.xsd"/>
+	<!-- Type definitions for Extensions -->
+	<xsd:complexType name="ParoleHearingType">
+		<xsd:annotation>
+			<xsd:documentation>A data type for overall summary information for the Case Hearing Information</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="j:CourtEventType">
+				<xsd:sequence>
+					<xsd:element ref="cadoj:HearingType"/>
+					<xsd:element ref="nc:ScheduleDate"/>
+					<xsd:element ref="nc:ScheduleDayStartTime"/>
+					<xsd:element ref="cadoj:HearingNoticeText"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="DetentionType">
+		<xsd:annotation>
+			<xsd:documentation>A data type for overall summary information for Detention Related Information</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="nc:SupervisionType">
+				<xsd:sequence>
+					<xsd:element ref="scr:ProjectedReleaseDate"/>
+					<xsd:element ref="nc:FacilityName"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="NoticeParoleHrgType">
+		<xsd:annotation>
+			<xsd:documentation>A data type for overall summary information for Notice of Parole Hearing.  Quantitive synopsis of all the document information.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ComplexObjectType">
+				<xsd:sequence>
+					<xsd:element ref="cadoj:NoticeCreationDate"/>
+					<xsd:element ref="cadoj:Flag1707"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="ParoleAdministratorType">
+		<xsd:annotation>
+			<xsd:documentation>A data type for overall summary information of a Parole Administrator</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ComplexObjectType">
+				<xsd:sequence>
+					<xsd:element ref="nc:PersonName"/>
+					<xsd:element ref="nc:StructuredAddress"/>
+					<xsd:element ref="nc:ContactTelephoneNumber"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="InmateType">
+		<xsd:annotation>
+			<xsd:documentation>A data type for overall summary information of a Parolee</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ComplexObjectType">
+				<xsd:sequence>
+					<xsd:element ref="scr:InmateNumber"/>
+					<xsd:element ref="nc:PersonName"/>
+					<xsd:element ref="nc:PersonBirthDate"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="ParoleAgencyType">
+		<xsd:annotation>
+			<xsd:documentation>A data type for overall summary information of a Parole Agency</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ComplexObjectType">
+				<xsd:sequence>
+					<xsd:element ref="nc:ContactFaxNumber"/>
+					<xsd:element ref="nc:ContactEmailID"/>
+					<xsd:element ref="nc:ContactTelephoneNumber"/>
+					<xsd:element ref="nc:SourceContactPersonText"/>
+					<xsd:element ref="nc:StructuredAddress"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="PoliceReportType">
+		<xsd:annotation>
+			<xsd:documentation>A data type for overall summary information of a Police Report</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ComplexObjectType">
+				<xsd:sequence>
+					<xsd:element ref="nc:DocumentIdentification"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="ProsecutorType">
+		<xsd:annotation>
+			<xsd:documentation>A data type for overall summary information of a Police Report</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ComplexObjectType">
+				<xsd:sequence>
+					<xsd:element ref="nc:PersonName"/>
+					<xsd:element ref="nc:ContactTelephoneNumber"/>
+					<xsd:element ref="j:JudicialOfficialCategoryText"/>
+					<xsd:element ref="cadoj:CountyJurisdiction"/>
+					<xsd:element ref="nc:StructuredAddress"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<!-- Global Element Deffinitions -->
+	<xsd:element name="Case" type="nc:CaseType">
+		<xsd:annotation>
+			<xsd:documentation>The Case is used to inherit Unique identifier assigned to an individual court case..
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ParoleHearing" type="cadoj:ParoleHearingType">
+		<xsd:annotation>
+			<xsd:documentation>The Case Hearing information.	</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="CountyJurisdiction" type="fips_6-4:USCountyCodeSimpleType">
+		<xsd:annotation>
+			<xsd:documentation>The Case Hearing information.	</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="CDCJobTitle" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>The job title of the CDC official..</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="CIINumber" type="nc:IdentificationType">
+		<xsd:annotation>
+			<xsd:documentation>The unique identifier assigned by the DOJ to the person.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Flag1707" type="cadojNoticeParoleHrgcodes:YesNoType">
+		<xsd:annotation>
+			<xsd:documentation>Victim 1707 Notification Requested.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="HearingType" type="cadojNoticeParoleHrgcodes:HearingTypeCodeType">
+		<xsd:annotation>
+			<xsd:documentation>Victim 1707 Notification Requested.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Inmate" type="cadoj:InmateType">
+		<xsd:annotation>
+			<xsd:documentation>Information about a Inmate up for Parole.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="NoticeCreationDate" type="nc:DateType">
+		<xsd:annotation>
+			<xsd:documentation>Date the official completed the notice.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="NoticeParoleHrg" type="cadoj:NoticeParoleHrgType">
+		<xsd:annotation>
+			<xsd:documentation>An overall summary information of the Notice of Parole Hearing.  Quantitive synopsis of all the document information.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ParoleAgency" type="cadoj:ParoleAgencyType">
+		<xsd:annotation>
+			<xsd:documentation>Information about a Parole Agency.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="HearingNoticeText" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>Text of the notice of hearing .</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PoliceReport" type="cadoj:PoliceReportType">
+		<xsd:annotation>
+			<xsd:documentation>Information about a Police Report.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Prosecutor" type="cadoj:ProsecutorType">
+		<xsd:annotation>
+			<xsd:documentation>Information about a Prosecutor.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+</xsd:schema>

@@ -1,0 +1,948 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:cadoj="http://doj.ca.gov/niem/PoliceRpt/Extension/1.0" xmlns:cadojPoliceRptcodes="http://doj.ca.gov/niem/PoliceRpt/Codes/1.0" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:j="http://niem.gov/niem/domains/jxdm/4.0" xmlns:scr="http://niem.gov/niem/domains/screening/2.0" targetNamespace="http://doj.ca.gov/niem/PoliceRpt/Extension/1.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1">
+	<!-- Import namespaces -->
+	<xsd:import namespace="http://niem.gov/niem/structures/2.0" schemaLocation="..\PoliceRpt\niem\structures\2.0\structures.xsd"/>
+	<xsd:import namespace="http://niem.gov/niem/niem-core/2.0" schemaLocation="..\PoliceRpt\niem\niem-core\2.0\niem-core.xsd"/>
+	<xsd:import namespace="http://niem.gov/niem/proxy/xsd/2.0" schemaLocation="..\PoliceRpt\niem\proxy\xsd\2.0\xsd.xsd"/>
+	<xsd:import namespace="http://niem.gov/niem/domains/jxdm/4.0" schemaLocation="..\PoliceRpt\niem\domains\jxdm\4.0\jxdm.xsd"/>
+	<xsd:import namespace="http://niem.gov/niem/domains/screening/2.0" schemaLocation="..\PoliceRpt\niem\domains\screening\2.0\screening.xsd"/>
+	<xsd:import namespace="http://doj.ca.gov/niem/PoliceRpt/Codes/1.0" schemaLocation="..\PoliceRpt\codes-schema.xsd"/>
+	<!-- Type definitions for Extensions -->
+	<!-- Generated IEPD Type Extensions Start Here -->
+	<xsd:complexType name="BusinessType">
+		<xsd:annotation>
+			<xsd:documentation>A data type for Business or School Information </xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ComplexObjectType">
+				<xsd:sequence>
+					<xsd:element ref="nc:Address"/>
+					<xsd:element ref="nc:OrganizationName"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="CaseType">
+		<xsd:annotation>
+			<xsd:documentation>A data type Case </xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="nc:CaseType">
+				<xsd:sequence>
+					<xsd:element ref="cadoj:AssociatedCaseNumber"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="ContactInformationType">
+		<xsd:annotation>
+			<xsd:documentation>A data type ContactInformation </xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ComplexObjectType">
+				<xsd:sequence>
+					<xsd:element ref="nc:TelephoneNumber"/>
+					<xsd:element ref="cadoj:PrimaryTelephoneNumber"/>
+					<xsd:element ref="cadoj:SecondaryTelephoneNumber"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="EnforcementAgencyType">
+		<xsd:annotation>
+			<xsd:documentation>A data type EnforcementAgency </xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ComplexObjectType">
+				<xsd:sequence>
+					<xsd:element ref="cadoj:AgencyDivision"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="EnforcementSupervisorType">
+		<xsd:annotation>
+			<xsd:documentation>A data type EnforcementSupervisor </xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ComplexObjectType">
+				<xsd:sequence>
+					<xsd:element ref="nc:PersonName"/>
+					<xsd:element ref="cadoj:OfficerIdentification"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="EvidenceType">
+		<xsd:annotation>
+			<xsd:documentation>A data type Evidence </xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ComplexObjectType">
+				<xsd:sequence>
+					<xsd:element ref="cadoj:VictimBloodEvidenceCollectedFlag"/>
+					<xsd:element ref="cadoj:VictimPhotoEvidenceCollectedFlag"/>
+					<xsd:element ref="cadoj:VictimUrineEvidenceCollectedFlag"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="IncidentType">
+		<xsd:annotation>
+			<xsd:documentation>A data type Incident </xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ComplexObjectType">
+				<xsd:sequence>
+					<xsd:element ref="cadoj:DiagramOfSceneTakenFlag"/>
+					<xsd:element ref="cadoj:DrugFieldTestTakenFlag"/>
+					<xsd:element ref="cadoj:DrugOrAlcoholUseFlag"/>
+					<xsd:element ref="cadoj:ChildPresentDomesticViolenceFlag"/>
+					<xsd:element ref="cadoj:PriorDomesticViolenceFlag"/>
+					<xsd:element ref="cadoj:IncidentLocationText"/>
+					<xsd:element ref="cadoj:EvidenceTakenFlag"/>
+					<xsd:element ref="cadoj:TypeOfForceCode"/>
+					<xsd:element ref="cadoj:TypeOfForceText"/>
+					<xsd:element ref="cadoj:GangInvolvementFlag"/>
+					<xsd:element ref="cadoj:JuvenileReportFlag"/>
+					<xsd:element ref="cadoj:LatentPrintEvidenceTakenFlag"/>
+					<xsd:element ref="cadoj:MethodOfEntryCode"/>
+					<xsd:element ref="cadoj:NeighborhoodSceneCheckedFlag"/>
+					<xsd:element ref="cadoj:IncidentStartDate"/>
+					<xsd:element ref="cadoj:IncidentStartDayOfWeek"/>
+					<xsd:element ref="cadoj:IncidentStartTime"/>
+					<xsd:element ref="cadoj:IncidentEndDate"/>
+					<xsd:element ref="cadoj:IncidentEndDayOfWeek"/>
+					<xsd:element ref="cadoj:IncidentEndTime"/>
+					<xsd:element ref="cadoj:PhotosOfSceneTakenFlag"/>
+					<xsd:element ref="cadoj:PointOfEntryCode"/>
+					<xsd:element ref="cadoj:PremiseTypeCode"/>
+					<xsd:element ref="cadoj:PropertyEvidenceTakenFlag"/>
+					<xsd:element ref="cadoj:ReportedDate"/>
+					<xsd:element ref="cadoj:ReportedDay"/>
+					<xsd:element ref="cadoj:ReportedTime"/>
+					<xsd:element ref="cadoj:SuspectActionsCode"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="NonEvidencePropertyType">
+		<xsd:annotation>
+			<xsd:documentation>A data type NonEvidenceProperty </xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ComplexObjectType">
+				<xsd:sequence>
+					<xsd:element ref="cadoj:NonEvidencePropertyBrandText"/>
+					<xsd:element ref="cadoj:NonEvidencePropertyDescription"/>
+					<xsd:element ref="cadoj:NonEvidencePropertyItemNumber"/>
+					<xsd:element ref="cadoj:NonEvidencePropertyModelText"/>
+					<xsd:element ref="cadoj:NonEvidencePropertyQuantityNumber"/>
+					<xsd:element ref="cadoj:NonEvidencePropertySerialNumber"/>
+					<xsd:element ref="cadoj:NonEvidencePropertyEstValue"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="PartyType">
+		<xsd:annotation>
+			<xsd:documentation>A data type Party </xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ComplexObjectType">
+				<xsd:sequence>
+					<xsd:element ref="cadoj:VictimAdvisedSexualAssultFlag"/>
+					<xsd:element ref="nc:Address"/>
+					<xsd:element ref="cadoj:Business"/>
+					<xsd:element ref="nc:PersonAgeMeasure"/>
+					<xsd:element ref="nc:PersonBirthDate"/>
+					<xsd:element ref="nc:PersonHeightMeasure"/>
+					<xsd:element ref="nc:PersonName"/>
+					<xsd:element ref="nc:PersonRaceCode"/>
+					<xsd:element ref="nc:PersonSex"/>
+					<xsd:element ref="nc:PersonWeightMeasure"/>
+					<xsd:element ref="cadoj:StateOfCAVictimFlag"/>
+					<xsd:element ref="cadoj:PartyRequiresInterpreterFlag"/>
+					<xsd:element ref="cadoj:PartyRequestForInterpreterText"/>
+					<xsd:element ref="cadoj:PartyTypeCode"/>
+					<xsd:element ref="cadoj:VictimAdvDomesticViolenceFlag"/>
+					<xsd:element ref="cadoj:VictimAdvVictimWitnessAssistanceFlag"/>
+					<xsd:element ref="nc:DriverLicenseIdentification"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="PersonIdentificationType">
+		<xsd:annotation>
+			<xsd:documentation>A data type PersonIdentification </xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ComplexObjectType">
+				<xsd:sequence>
+					<xsd:element ref="cadoj:CIINumber"/>
+					<xsd:element ref="cadoj:PhotoIdentificationNumber"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="PoliceRptType">
+		<xsd:annotation>
+			<xsd:documentation>A data type PoliceRpt </xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ComplexObjectType">
+				<xsd:sequence>
+					<xsd:element ref="cadoj:DocumentAttachment"/>
+					<xsd:element ref="cadoj:ReportDate"/>
+					<xsd:element ref="cadoj:ReportSubmitter"/>
+					<xsd:element ref="cadoj:ReportID"/>
+					<xsd:element ref="cadoj:NarrativeTextDescription"/>
+					<xsd:element ref="cadoj:NarrativeTypeText"/>
+					<xsd:element ref="cadoj:DateOfSupplementalReport"/>
+					<xsd:element ref="cadoj:ReportReviewDate"/>
+					<xsd:element ref="cadoj:ReportTypeText"/>
+					<xsd:element ref="cadoj:SupplementalReportFlag"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="PropertyType">
+		<xsd:annotation>
+			<xsd:documentation>A data type Property </xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ComplexObjectType">
+				<xsd:sequence>
+					<xsd:element ref="cadoj:PropertyBrandText"/>
+					<xsd:element ref="cadoj:PropertyStatusCode"/>
+					<xsd:element ref="cadoj:PropertyDescriptionText"/>
+					<xsd:element ref="cadoj:PropertyLocationInEvidenceRoom"/>
+					<xsd:element ref="cadoj:PropertyItemNumber"/>
+					<xsd:element ref="cadoj:PropertyLocationCode"/>
+					<xsd:element ref="cadoj:PropertyLocationCollected"/>
+					<xsd:element ref="cadoj:PropertyModelText"/>
+					<xsd:element ref="cadoj:PropertyOwnerCode"/>
+					<xsd:element ref="cadoj:PropertyQuantityNumber "/>
+					<xsd:element ref="cadoj:PropertySerialNumber"/>
+					<xsd:element ref="cadoj:PropertyType "/>
+					<xsd:element ref="cadoj:PropertyEstimatedValue"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="ReportingDisctrictType">
+		<xsd:annotation>
+			<xsd:documentation>A data type ReportingDisctrict </xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ComplexObjectType">
+				<xsd:sequence>
+					<xsd:element ref="nc:OrganizationName"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="SubjectType">
+		<xsd:annotation>
+			<xsd:documentation>A data type Subject </xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="j:SubjectType">
+				<xsd:sequence>
+					<xsd:element ref="cadoj:PersonGlassesCode"/>
+					<xsd:element ref="nc:DriverLicenseIdentification"/>
+					<xsd:element ref="nc:Address"/>
+					<xsd:element ref="cadoj:Business"/>
+					<xsd:element ref="cadoj:InterpreterTypeCode"/>
+					<xsd:element ref="cadoj:InterpreterTextDescription"/>
+					<xsd:element ref="cadoj:RelationshipToVictimCode"/>
+					<xsd:element ref="scr:PersonPhysicalMarkingAugmentation"/>
+					<xsd:element ref="cadoj:PersonHandedness"/>
+					<xsd:element ref="cadoj:SubjectsVehicle"/>
+					<xsd:element ref="cadoj:Weapon"/>
+					<xsd:element ref="cadoj:PersonIdentification"/>
+					<xsd:element ref="cadoj:ContactInformation"/>
+					<xsd:element ref="cadoj:SubjectStatus"/>
+					<xsd:element ref="nc:PersonGangAssociation"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="SubjectsVehicleType">
+		<xsd:annotation>
+			<xsd:documentation>A data type SubjectsVehicle </xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ComplexObjectType">
+				<xsd:sequence>
+					<xsd:element ref="cadoj:VehicleLicenseNumber"/>
+					<xsd:element ref="cadoj:VehicleRaisedOrLowerdFlag"/>
+					<xsd:element ref="cadoj:VehicleSpecialPaintFlag"/>
+					<xsd:element ref="cadoj:VehicleSpecialWheelsFlag"/>
+					<xsd:element ref="cadoj:VehicleSunRoofFlag"/>
+					<xsd:element ref="cadoj:VehicleDispositionCode"/>
+					<xsd:element ref="j:VehicleBodyCategoryCode"/>
+					<xsd:element ref="nc:Vehicle"/>
+					<xsd:element ref="cadoj:SubjectVehicleOwner"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="SubjectVehicleOwnerType">
+		<xsd:annotation>
+			<xsd:documentation>A data type SubjectVehicleOwner </xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ComplexObjectType">
+				<xsd:sequence>
+					<xsd:element ref="nc:StructuredAddress"/>
+					<xsd:element ref="nc:PersonName"/>
+					<xsd:element ref="cadoj:SubjectOwnerFlag"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="SubjectStatusType">
+		<xsd:annotation>
+			<xsd:documentation>A data type SubjectStatus </xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ComplexObjectType">
+				<xsd:sequence>
+					<xsd:element ref="cadoj:SubjectArrestStatusCode"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="VictimType">
+		<xsd:annotation>
+			<xsd:documentation>A data type Victim  </xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="j:VictimType">
+				<xsd:sequence>
+					<xsd:element ref="cadoj:PersonEyeColor"/>
+					<xsd:element ref="cadoj:VictimInjuredFlag"/>
+					<xsd:element ref="cadoj:Evidence"/>
+					<xsd:element ref="cadoj:VictimsVehicle"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="VictimsVehicleType">
+		<xsd:annotation>
+			<xsd:documentation>A data type VictimsVehicle </xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ComplexObjectType">
+				<xsd:sequence>
+					<xsd:element ref="cadoj:VehicleDispositionCode"/>
+					<xsd:element ref="cadoj:VehicleUniqueIdentificationDescription"/>
+					<xsd:element ref="cadoj:VehicleLicenseNumber"/>
+					<xsd:element ref="nc:Vehicle"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="VictimVehicleOwnerType">
+		<xsd:annotation>
+			<xsd:documentation>A data type VictimVehicleOwner </xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ComplexObjectType">
+				<xsd:sequence>
+					<xsd:element ref="cadoj:VictimOwnerFlag"/>
+					<xsd:element ref="nc:StructuredAddress"/>
+					<xsd:element ref="nc:PersonName"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="WeaponType">
+		<xsd:annotation>
+			<xsd:documentation>A data type Weapon </xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ComplexObjectType">
+				<xsd:sequence>
+					<xsd:element ref="cadoj:WeaponDescriptionCode"/>
+					<xsd:element ref="cadoj:WeaponDescriptionText"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<!-- Generated IEPD Type Extensions End Here -->
+	<!-- Global Element Deffinitions -->
+	<xsd:element name="PoliceRpt" type="cadoj:PoliceRptType">
+		<xsd:annotation>
+			<xsd:documentation>Information for CDC Additional Commitment Form</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PersonIdentification" type="cadoj:PersonIdentificationType">
+		<xsd:annotation>
+			<xsd:documentation>Identification Numbers Assigned to a Person by and Agency Information.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PersonDOJIdentification" type="nc:IdentificationType">
+		<xsd:annotation>
+			<xsd:documentation>Identification DOJ Assigns to a person.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<!-- Generated IEPD Attributes Start Here -->
+	<xsd:element name="AssociatedCaseNumber" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>Another case or incident number associated with this incident.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ContactInformation" type="cadoj:ContactInformationType">
+		<xsd:annotation>
+			<xsd:documentation>Instantiation of Information for ContactInformation</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PrimaryTelephoneNumber" type="nc:TelephoneNumberType">
+		<xsd:annotation>
+			<xsd:documentation>Complex element contains all of the components associated with the primary telephone number for the suspect.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="SecondaryTelephoneNumber" type="nc:TelephoneNumberType">
+		<xsd:annotation>
+			<xsd:documentation>Complex element composed of all required components of the suspect's telephone number.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="EnforcementAgency" type="cadoj:EnforcementAgencyType">
+		<xsd:annotation>
+			<xsd:documentation>Instantiation of Information for EnforcementAgency</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="AgencyDivision" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>The watch division at the time the report was taken.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="EnforcementSupervisor" type="cadoj:EnforcementSupervisorType">
+		<xsd:annotation>
+			<xsd:documentation>Instantiation of Information for EnforcementSupervisor</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="OfficerIdentification" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>The badge number of the supervisor reviewing the incident report.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Evidence" type="cadoj:EvidenceType">
+		<xsd:annotation>
+			<xsd:documentation>Instantiation of Information for Evidence</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VictimBloodEvidenceCollectedFlag" type="cadojPoliceRptcodes:YesNoType">
+		<xsd:annotation>
+			<xsd:documentation>An indication of victim blood evidence collected.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VictimPhotoEvidenceCollectedFlag" type="cadojPoliceRptcodes:YesNoType">
+		<xsd:annotation>
+			<xsd:documentation>An indication of victim photo evidence collected.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VictimUrineEvidenceCollectedFlag" type="cadojPoliceRptcodes:YesNoType">
+		<xsd:annotation>
+			<xsd:documentation>An indication of victim urine evidence collected.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Incident" type="cadoj:IncidentType">
+		<xsd:annotation>
+			<xsd:documentation>Instantiation of Information for Incident</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="DiagramOfSceneTakenFlag" type="cadojPoliceRptcodes:YesNoType">
+		<xsd:annotation>
+			<xsd:documentation>An indicator that a diagram of the scene was made.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="DrugFieldTestTakenFlag" type="cadojPoliceRptcodes:YesNoType">
+		<xsd:annotation>
+			<xsd:documentation>An indicator that a drug field test was taken for this incident.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="DrugOrAlcoholUseFlag" type="cadojPoliceRptcodes:YesNoType">
+		<xsd:annotation>
+			<xsd:documentation>An indicator of alcohol or drug use associated with a domestic violence incident.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ChildPresentDomesticViolenceFlag" type="cadojPoliceRptcodes:YesNoType">
+		<xsd:annotation>
+			<xsd:documentation>An indicator of children present associated with a domestic violence incident.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PriorDomesticViolenceFlag" type="cadojPoliceRptcodes:YesNoType">
+		<xsd:annotation>
+			<xsd:documentation>An indicator of prior contact in a domestic violence incident.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="IncidentLocationText" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>A narrative description of the location of the event being reported.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="EvidenceTakenFlag" type="cadojPoliceRptcodes:YesNoType">
+		<xsd:annotation>
+			<xsd:documentation>An indicator that evidence was taken.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="TypeOfForceCode" type="cadojPoliceRptcodes:TypeOfForceCodeType">
+		<xsd:annotation>
+			<xsd:documentation>A code representing the type of force used in the reported incident.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="TypeOfForceText" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>A free-form entry of the type of force used.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="GangInvolvementFlag" type="cadojPoliceRptcodes:YesNoType">
+		<xsd:annotation>
+			<xsd:documentation>An indicator of gang member involvement.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="JuvenileReportFlag" type="cadojPoliceRptcodes:YesNoType">
+		<xsd:annotation>
+			<xsd:documentation>Juvenile report indicator.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="LatentPrintEvidenceTakenFlag" type="cadojPoliceRptcodes:YesNoType">
+		<xsd:annotation>
+			<xsd:documentation>An indicator that latent print evidence was taken at the scene.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="MethodOfEntryCode" type="cadojPoliceRptcodes:MethodOfEntryCodeType">
+		<xsd:annotation>
+			<xsd:documentation>A code describing the method of entry associated with this incident.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="NeighborhoodSceneCheckedFlag" type="cadojPoliceRptcodes:YesNoType">
+		<xsd:annotation>
+			<xsd:documentation>An indicator that the neighborhood of the crime scene was checked.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="IncidentStartDate" type="nc:DateType">
+		<xsd:annotation>
+			<xsd:documentation>The start date for this incident.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="IncidentStartDayOfWeek" type="xsd:gDay">
+		<xsd:annotation>
+			<xsd:documentation>The start day of the week for this incident.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="IncidentStartTime" type="xsd:time">
+		<xsd:annotation>
+			<xsd:documentation>The start time for this incident.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="IncidentEndDate" type="nc:DateType">
+		<xsd:annotation>
+			<xsd:documentation>The end date for this incident.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="IncidentEndDayOfWeek" type="xsd:gDay">
+		<xsd:annotation>
+			<xsd:documentation>The end day of the week for this incident.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="IncidentEndTime" type="xsd:time">
+		<xsd:annotation>
+			<xsd:documentation>The end time for this incident.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PhotosOfSceneTakenFlag" type="cadojPoliceRptcodes:YesNoType">
+		<xsd:annotation>
+			<xsd:documentation>An indicator that photos of the scene were taken.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PointOfEntryCode" type="cadojPoliceRptcodes:PointOfEntryCodeType">
+		<xsd:annotation>
+			<xsd:documentation>A code describing the point of entry associated with this incident.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PremiseTypeCode" type="cadojPoliceRptcodes:PremiseCodeType">
+		<xsd:annotation>
+			<xsd:documentation>A code describing the type of premises associated with this incident.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PropertyEvidenceTakenFlag" type="cadojPoliceRptcodes:YesNoType">
+		<xsd:annotation>
+			<xsd:documentation>An indicator that property evidence was taken. </xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ReportedDate" type="nc:DateType">
+		<xsd:annotation>
+			<xsd:documentation>The date the incident was reported to law enforcement.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ReportedDay" type="xsd:gDay">
+		<xsd:annotation>
+			<xsd:documentation>The day of the week the incident was reported to law enforcement.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ReportedTime" type="xsd:time">
+		<xsd:annotation>
+			<xsd:documentation>The time the incident was reported to law enforcement.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="SuspectActionsCode" type="cadojPoliceRptcodes:SuspectActionCodeType">
+		<xsd:annotation>
+			<xsd:documentation>A code describing the suspect's action associated with this incident.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="NonEvidenceProperty" type="cadoj:NonEvidencePropertyType">
+		<xsd:annotation>
+			<xsd:documentation>Instantiation of Information for NonEvidenceProperty</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="NonEvidencePropertyBrandText" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>A narrative description of the brand of this property item.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="NonEvidencePropertyDescription" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>A narrative description of this property item.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="NonEvidencePropertyItemNumber" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>A unique number assigned for each property item related to this incident.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="NonEvidencePropertyModelText" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>A narrative description of the model of this property item.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="NonEvidencePropertyQuantityNumber" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>The quantity associated with this property item.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="NonEvidencePropertySerialNumber" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>The serial number of this property item.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="NonEvidencePropertyEstValue" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>The estimated value of this property item.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PersonHandedness" type="cadojPoliceRptcodes:PersonHandednessCodeType">
+		<xsd:annotation>
+			<xsd:documentation>Instantiation of Information for Party</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Party" type="cadoj:PartyType">
+		<xsd:annotation>
+			<xsd:documentation>Instantiation of Information for Party</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VictimAdvisedSexualAssultFlag" type="cadojPoliceRptcodes:YesNoType">
+		<xsd:annotation>
+			<xsd:documentation>An indicator of victim advisement in a sexual assault case.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Business" type="cadoj:BusinessType">
+		<xsd:annotation>
+			<xsd:documentation>A complex element including all the required components of the business or school address for this party. </xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="StateOfCAVictimFlag" type="cadojPoliceRptcodes:YesNoType">
+		<xsd:annotation>
+			<xsd:documentation>An indicator that the State of California is the victim.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PartyRequiresInterpreterFlag" type="cadojPoliceRptcodes:YesNoType">
+		<xsd:annotation>
+			<xsd:documentation>The language the party requires an interpreter for.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PartyRequestForInterpreterText" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>A free-form text describing interpreter services required by this party.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PartyTypeCode" type="cadojPoliceRptcodes:PartyCodeType">
+		<xsd:annotation>
+			<xsd:documentation>The type of person or party (victim, witness, reporting party or other party) involved in the incident. </xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VictimAdvDomesticViolenceFlag" type="cadojPoliceRptcodes:YesNoType">
+		<xsd:annotation>
+			<xsd:documentation>An indicator of victim advisement in a domestic violence case.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VictimAdvVictimWitnessAssistanceFlag" type="cadojPoliceRptcodes:YesNoType">
+		<xsd:annotation>
+			<xsd:documentation>An indicator of victim advisement of the victim/witness assistance program.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="CIINumber" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>The suspect's fingerprint-based state CII number.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PhotoIdentificationNumber" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>The suspect's photo identification number.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="DocumentAttachment" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>A complete document image of the police report in a PDF format.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ReportDate" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>The date of a police report.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ReportSubmitter" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>The name of the law enforcement officer who submitted the police report.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ReportID" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>The identifying number of the report prepared by the law enforcement officer concerning a crime.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="NarrativeTextDescription" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>A detailed narrative text describing the incident.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="NarrativeTypeText" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>A code indicating the type of narrative report.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="DateOfSupplementalReport" type="nc:DateType">
+		<xsd:annotation>
+			<xsd:documentation>Date the supplemental report was filed.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ReportReviewDate" type="nc:DateType">
+		<xsd:annotation>
+			<xsd:documentation>The date the report was reviewed.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ReportTypeText" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>A description of the type of report filed.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="SupplementalReportFlag" type="cadojPoliceRptcodes:YesNoType">
+		<xsd:annotation>
+			<xsd:documentation>An indication that this is a supplemental report to the main police report.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Property" type="cadoj:PropertyType">
+		<xsd:annotation>
+			<xsd:documentation>Instantiation of Information for Property</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PropertyBrandText" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>A text description of the property brand name.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PropertyStatusCode" type="cadojPoliceRptcodes:PropertyStatusCodeType">
+		<xsd:annotation>
+			<xsd:documentation>A code indicating the property status, including codes for evidence, recovered, stolen, found, etc.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PropertyDescriptionText" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>A narrative description of the property item.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PropertyLocationInEvidenceRoom" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>An indicator of the location of the property item in the evidence room.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PropertyItemNumber" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>A unique number assigned to each property item associated with this incident.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PropertyLocationCode" type="cadojPoliceRptcodes:PropertyLocationCodeType">
+		<xsd:annotation>
+			<xsd:documentation>A code indicating the location of the property.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PropertyLocationCollected" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>A text description of location at which the property was collected.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PropertyModelText" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>A text description of the property model.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PropertyOwnerCode" type="cadojPoliceRptcodes:PropertyOwnerCodeType">
+		<xsd:annotation>
+			<xsd:documentation>A code indicating the owner of the property as victim, suspect, or other.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PropertyQuantityNumber " type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>The quantity of this property item.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PropertySerialNumber" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>The serial number associated with this property item.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PropertyType " type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>A code indicating the type of property being described.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PropertyEstimatedValue" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>The estimated value of the property item.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ReportingDisctrict" type="cadoj:ReportingDisctrictType">
+		<xsd:annotation>
+			<xsd:documentation>Instantiation of Information for ReportingDisctrict</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PersonGlassesCode" type="cadojPoliceRptcodes:PersonGlassesCodeType">
+		<xsd:annotation>
+			<xsd:documentation>A code describing the suspect's glasses.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="InterpreterTypeCode" type="cadojPoliceRptcodes:InterpreterCodeType">
+		<xsd:annotation>
+			<xsd:documentation>A code indicating the type of interpreter needed for the suspect.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="InterpreterTextDescription" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>A text description of the interpreter needed for the suspect.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="RelationshipToVictimCode" type="cadojPoliceRptcodes:RelationshipToVictimCodeType">
+		<xsd:annotation>
+			<xsd:documentation>A code describing the relationship between the suspect and the victim.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="SubjectsVehicle" type="cadoj:SubjectsVehicleType">
+		<xsd:annotation>
+			<xsd:documentation>Instantiation of Information for SubjectsVehicle</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehicleLicenseNumber" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>The vehicle license number for the suspect's vehicle.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehicleRaisedOrLowerdFlag" type="cadojPoliceRptcodes:YesNoType">
+		<xsd:annotation>
+			<xsd:documentation>An indication that the suspect's vehicle is raised or lowered.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehicleSpecialPaintFlag" type="cadojPoliceRptcodes:YesNoType">
+		<xsd:annotation>
+			<xsd:documentation>An indication that the suspect's vehicle has special paint.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehicleSpecialWheelsFlag" type="cadojPoliceRptcodes:YesNoType">
+		<xsd:annotation>
+			<xsd:documentation>An indication that the suspect's vehicle has special wheels.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehicleSunRoofFlag" type="cadojPoliceRptcodes:YesNoType">
+		<xsd:annotation>
+			<xsd:documentation>An indication that the suspect's vehicle has sun roof.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehcileDispositionCode" type="cadojPoliceRptcodes:VehicleDispositionCodeType">
+		<xsd:annotation>
+			<xsd:documentation>A code indicating what was done with the suspect's vehicle.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="SubjectVehicleOwner" type="cadoj:SubjectVehicleOwnerType">
+		<xsd:annotation>
+			<xsd:documentation>Instantiation of Information for SubjectVehicleOwner</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="SubjectOwnerFlag" type="cadojPoliceRptcodes:YesNoType">
+		<xsd:annotation>
+			<xsd:documentation>An indicator if the suspect is also the registered owner of the vehicle.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="SubjectStatus" type="cadoj:SubjectStatusType">
+		<xsd:annotation>
+			<xsd:documentation>Instantiation of Information for SuspectStatus</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="SubjectArrestStatusCode" type="cadojPoliceRptcodes:SubjectArrestStatusCodeType">
+		<xsd:annotation>
+			<xsd:documentation>An indication of suspect status such as booked, cited, or at large.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PersonEyeColor" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>A code for victim eye color.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VictimInjuredFlag" type="cadojPoliceRptcodes:YesNoType">
+		<xsd:annotation>
+			<xsd:documentation>An indication that the victim was injured. </xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VictimsVehicle" type="cadoj:VictimsVehicleType">
+		<xsd:annotation>
+			<xsd:documentation>Instantiation of Information for VictimsVehicle</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehicleDispositionCode" type="cadojPoliceRptcodes:VehicleDispositionCodeType">
+		<xsd:annotation>
+			<xsd:documentation>A code indicating vehicle status, including stolen, impounded, left at scene, printed, and other status codes.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VehicleUniqueIdentificationDescription" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>A free-form text field describing vehicle's unique identification.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VictimVehicleOwner" type="cadoj:VictimVehicleOwnerType">
+		<xsd:annotation>
+			<xsd:documentation>Instantiation of Information for VictimVehicleOwner</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VictimOwnerFlag" type="cadojPoliceRptcodes:YesNoType">
+		<xsd:annotation>
+			<xsd:documentation>An indicator if the victim is also the registered owner of the vehicle.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Weapon" type="cadoj:WeaponType">
+		<xsd:annotation>
+			<xsd:documentation>Instantiation of Information for Weapon</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="WeaponDescriptionCode" type="cadojPoliceRptcodes:WeaponDescriptionCodeType">
+		<xsd:annotation>
+			<xsd:documentation>A code describing the suspect's weapon.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="WeaponDescriptionText" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>A description of the suspect's weapon.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<!-- Generated IEPD Attributes End Here -->
+</xsd:schema>

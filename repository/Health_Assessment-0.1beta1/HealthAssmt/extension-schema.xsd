@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2008 rel. 2 (http://www.altova.com) by lee (DOJ) -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:cadoj="http://doj.ca.gov/niem/HealthAssmt/Extension/1.0" xmlns:cadojHealthAssmtcodes="http://doj.ca.gov/niem/HealthAssmt/Codes/1.0" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" targetNamespace="http://doj.ca.gov/niem/HealthAssmt/Extension/1.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1">
+	<!-- Import namespaces -->
+	<xsd:import namespace="http://niem.gov/niem/structures/2.0" schemaLocation="..\HealthAssmt\niem\structures\2.0\structures.xsd"/>
+	<xsd:import namespace="http://niem.gov/niem/niem-core/2.0" schemaLocation="..\HealthAssmt\niem\niem-core\2.0\niem-core.xsd"/>
+	<xsd:import namespace="http://niem.gov/niem/proxy/xsd/2.0" schemaLocation="..\HealthAssmt\niem\proxy\xsd\2.0\xsd.xsd"/>
+	<xsd:import namespace="http://doj.ca.gov/niem/HealthAssmt/Codes/1.0" schemaLocation="..\HealthAssmt\codes-schema.xsd"/>
+	<!-- Type definitions for Extensions -->
+	<xsd:complexType name="HealthAssmtType">
+		<xsd:annotation>
+			<xsd:documentation>A data type for overall summary information for California DOJ IEPD Health Assessment.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ComplexObjectType">
+				<xsd:sequence/>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<!-- Generated IEPD Type Extensions Start Here -->
+	<xsd:complexType name="CardiovascularType">
+		<xsd:annotation>
+			<xsd:documentation>A data type Cardiovascular </xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ComplexObjectType">
+				<xsd:sequence>
+					<xsd:element ref="cadoj:PulseApicalText"/>
+					<xsd:element ref="cadoj:PulseRadialText"/>
+					<xsd:element ref="cadoj:PulsePedalText"/>
+					<xsd:element ref="cadoj:HeartRythmFlag"/>
+					<xsd:element ref="cadoj:HomansSignFlag"/>
+					<xsd:element ref="cadoj:CariovascularHistoryText"/>
+					<xsd:element ref="cadoj:BreathsPerMinute"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="GastrointestinalType">
+		<xsd:annotation>
+			<xsd:documentation>A data type Gastrointestinal </xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ComplexObjectType">
+				<xsd:sequence>
+					<xsd:element ref="cadoj:ConstipationFlag"/>
+					<xsd:element ref="cadoj:DiarrheaText"/>
+					<xsd:element ref="cadoj:IndigestionFlag"/>
+					<xsd:element ref="cadoj:NauseaFlag"/>
+					<xsd:element ref="cadoj:VomitingFlag"/>
+					<xsd:element ref="cadoj:ConditionOfTeathText"/>
+					<xsd:element ref="cadoj:BowlPatternText"/>
+					<xsd:element ref="cadoj:EatingPatternText"/>
+					<xsd:element ref="cadoj:LaxativeUseFlag"/>
+					<xsd:element ref="cadoj:GastrointestinalHistoryText"/>
+					<xsd:element ref="cadoj:DietaryRestrictionText"/>
+					<xsd:element ref="cadoj:SelfDietaryRestrictionsText"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="JuvenileType">
+		<xsd:annotation>
+			<xsd:documentation>A data type Juvenile </xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ComplexObjectType">
+				<xsd:sequence>
+					<xsd:element ref="nc:RoleOf"/>
+					<xsd:element ref="cadoj:PhysicalAssessment"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="MedicalHistoryType">
+		<xsd:annotation>
+			<xsd:documentation>A data type MedicalHistory </xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ComplexObjectType">
+				<xsd:sequence>
+					<xsd:element ref="cadoj:DrugHistoryText"/>
+					<xsd:element ref="cadoj:DMHNumber"/>
+					<xsd:element ref="cadoj:MedicalExamDate"/>
+					<xsd:element ref="cadoj:MedicalExamTime"/>
+					<xsd:element ref="cadoj:ImmunizationRecieved"/>
+					<xsd:element ref="cadoj:ImmunizationDate"/>
+					<xsd:element ref="cadoj:ChestXrayDate"/>
+					<xsd:element ref="cadoj:ChestXrayResult"/>
+					<xsd:element ref="cadoj:TBSTatus"/>
+					<xsd:element ref="cadoj:HistoryOfDiseases"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="MedicationsType">
+		<xsd:annotation>
+			<xsd:documentation>A data type Medications </xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ComplexObjectType">
+				<xsd:sequence>
+					<xsd:element ref="cadoj:PsychiatricMedsText"/>
+					<xsd:element ref="cadoj:Non-PsychiatricMedsText"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="NeuromuscularType">
+		<xsd:annotation>
+			<xsd:documentation>A data type Neuromuscular </xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ComplexObjectType">
+				<xsd:sequence>
+					<xsd:element ref="cadoj:ConsciousnessText"/>
+					<xsd:element ref="cadoj:PainLocationText"/>
+					<xsd:element ref="cadoj:GateText"/>
+					<xsd:element ref="cadoj:GripText"/>
+					<xsd:element ref="cadoj:NeuromuscularHistoryText"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="PhysicalAssessmentType">
+		<xsd:annotation>
+			<xsd:documentation>A data type PhysicalAssessment </xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ComplexObjectType">
+				<xsd:sequence>
+					<xsd:element ref="cadoj:PrimaryComplaint"/>
+					<xsd:element ref="cadoj:DrugUseText"/>
+					<xsd:element ref="cadoj:AllergiesText"/>
+					<xsd:element ref="cadoj:GeneralAppearanceText"/>
+					<xsd:element ref="cadoj:FoodSensativiitiesText"/>
+					<xsd:element ref="cadoj:AttitudeText"/>
+					<xsd:element ref="cadoj:EnvironmentalNeedsText"/>
+					<xsd:element ref="cadoj:LimitationsText"/>
+					<xsd:element ref="cadoj:CapabiliitesText"/>
+					<xsd:element ref="cadoj:ADADevicesText"/>
+					<xsd:element ref="cadoj:Skin"/>
+					<xsd:element ref="cadoj:Respiratory"/>
+					<xsd:element ref="cadoj:Neuromuscular"/>
+					<xsd:element ref="cadoj:Medications"/>
+					<xsd:element ref="cadoj:MedicalHistory"/>
+					<xsd:element ref="cadoj:Cardiovascular"/>
+					<xsd:element ref="cadoj:Gastrointestinal"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="RespiratoryType">
+		<xsd:annotation>
+			<xsd:documentation>A data type Respiratory </xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ComplexObjectType">
+				<xsd:sequence>
+					<xsd:element ref="cadoj:BreathingDescriptionText"/>
+					<xsd:element ref="cadoj:ShortnessOfBreathFlag"/>
+					<xsd:element ref="cadoj:BreahingLyingDownText"/>
+					<xsd:element ref="cadoj:SputumText"/>
+					<xsd:element ref="cadoj:RespitoryHistoryText"/>
+					<xsd:element ref="cadoj:RespitoryQualityText"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="SkinType">
+		<xsd:annotation>
+			<xsd:documentation>A data type Skin </xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ComplexObjectType">
+				<xsd:sequence>
+					<xsd:element ref="cadoj:SkinConditionText"/>
+					<xsd:element ref="cadoj:TurgorText"/>
+					<xsd:element ref="cadoj:EdimaText"/>
+					<xsd:element ref="cadoj:ScarsText"/>
+					<xsd:element ref="cadoj:TatoosText"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<!-- Generated IEPD Type Extensions End Here -->
+	<!-- Global Element Deffinitions -->
+	<xsd:element name="HealthAssmt" type="cadoj:HealthAssmtType">
+		<xsd:annotation>
+			<xsd:documentation>Information for CDC Additional Commitment Form</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<!-- Generated IEPD Attributes Start Here -->
+	<xsd:element name="Cardiovascular" type="cadoj:CardiovascularType">
+		<xsd:annotation>
+			<xsd:documentation>Instantiation of Information for Cardiovascular</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PulseApicalText" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>The pulse rate (number) obtained through a stethoscope on the chest.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PulseRadialText" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>The pulse rate (number)  obtained from the wrist.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PulsePedalText" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>The pulse rate (number)  obtained from the foot.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="HeartRythmFlag" type="cadojHealthAssmtcodes:HeartRythmType">
+		<xsd:annotation>
+			<xsd:documentation>Indicator as to whether the youth's heart rhythm is regular or irregular.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="HomansSignFlag" type="cadojHealthAssmtcodes:YesNoType">
+		<xsd:annotation>
+			<xsd:documentation>Indication (yes/no/unknown) as to whether the youth has Homan's Sign.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="CariovascularHistoryText" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>A description of the symptoms and diagnosed cardiovascular conditions of the youth.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="BreathsPerMinute" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>The number of breaths per minute of the youth.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Gastrointestinal" type="cadoj:GastrointestinalType">
+		<xsd:annotation>
+			<xsd:documentation>Instantiation of Information for Gastrointestinal</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ConstipationFlag" type="cadojHealthAssmtcodes:YesNoType">
+		<xsd:annotation>
+			<xsd:documentation>A yes/no/unknown indicator as to whether the youth experiences constipation.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="DiarrheaText" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>A yes/no/unknown indicator as to whether the youth experiences diarrhea.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="IndigestionFlag" type="cadojHealthAssmtcodes:YesNoType">
+		<xsd:annotation>
+			<xsd:documentation>A yes/no/unknown indicator as to whether the youth experiences indigestion.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="NauseaFlag" type="cadojHealthAssmtcodes:YesNoType">
+		<xsd:annotation>
+			<xsd:documentation>A yes/no/unknown indicator as to whether the youth experiences nausea.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="VomitingFlag" type="cadojHealthAssmtcodes:YesNoType">
+		<xsd:annotation>
+			<xsd:documentation>A yes/no/unknown indicator as to whether the youth experiences vomiting.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ConditionOfTeathText" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>A description of anything noteworthy about the youth's teeth (dentures, crooked, cavities, missing, etc.).</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="BowlPatternText" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>A description of how often the youth has a bowel movement.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="EatingPatternText" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>A description of how often the youth eats.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="LaxativeUseFlag" type="cadojHealthAssmtcodes:YesNoType">
+		<xsd:annotation>
+			<xsd:documentation>A yes/no/unknown indicator as to whether the youth uses laxatives.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="GastrointestinalHistoryText" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>A description of the symptoms and diagnosed gastrointestinal conditions of the youth.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="DietaryRestrictionText" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>Description of any special diet prescribed by a physician (diabetic, lactose intolerant, etc.)</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="SelfDietaryRestrictionsText" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>Description of any special diet adopted by the youth, without prescription by a physician (vegetarian, food the youth does not eat).</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Juvenile" type="cadoj:JuvenileType">
+		<xsd:annotation>
+			<xsd:documentation>Instantiation of Information for Juvenile</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="HomeLanguage" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>The language spoken in the youth's home.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PhysicalCharacteristics" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>Complex element describing the various physical characteristics of a juvenile (sex, race, height weight, eye and hair color)</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="LaguageOutsideOfHome" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>The language the juvenile speaks outside the home.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="MedicalHistory" type="cadoj:MedicalHistoryType">
+		<xsd:annotation>
+			<xsd:documentation>Instantiation of Information for MedicalHistory</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="DrugHistoryText" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>Description of the type and amount of drugs or alcohol used by the youth in the past.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="DMHNumber" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>Unique number assigned by the Department of Mental Health to identify the juvenile.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="MedicalExamDate" type="nc:DateType">
+		<xsd:annotation>
+			<xsd:documentation>The date the medical examination of the youth was conducted.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="MedicalExamTime" type="xsd:time">
+		<xsd:annotation>
+			<xsd:documentation>The time (24 hr. clock) the medical examination of the youth was conducted.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ImmunizationRecieved" type="nc:DateType">
+		<xsd:annotation>
+			<xsd:documentation>The type of immunization the juvenile has received.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ImmunizationDate" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>The date the juvenile received the immunization.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ChestXrayDate" type="nc:DateType">
+		<xsd:annotation>
+			<xsd:documentation>The date the juvenile last had a chest x-ray</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ChestXrayResult" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>The result of the juvenile's last chest x-ray</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="TBSTatus" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>Whether the juvenile tested positive for tuberculosis.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="HistoryOfDiseases" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>A list of the diseases the juvenile is known to have, such as hepatitis.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Medications" type="cadoj:MedicationsType">
+		<xsd:annotation>
+			<xsd:documentation>Instantiation of Information for Medications</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PsychiatricMedsText" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>Description of the psychiatric medications the youth is now taking including medication name, dosage, frequency and last dose.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Non-PsychiatricMedsText" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>Description of the non-psychiatric medications the youth is now taking including medication name, dosage, frequency and last dose.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Neuromuscular" type="cadoj:NeuromuscularType">
+		<xsd:annotation>
+			<xsd:documentation>Instantiation of Information for Neuromuscular</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ConsciousnessText" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>An assessment by the nurse as to how alert and oriented the youth is.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PainLocationText" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>Description of the location, severity and frequency of pain experienced regularly by the youth.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="GateText" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>Description of the youth's stride (shuffling, staggering, normal, etc.).</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="GripText" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>Description of the youth's grip with each hand (strong, weak, etc.).</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="NeuromuscularHistoryText" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>A description of the symptoms and diagnosed neuromuscular conditions of the youth.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PhysicalAssessment" type="cadoj:PhysicalAssessmentType">
+		<xsd:annotation>
+			<xsd:documentation>Instantiation of Information for PhysicalAssessment</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="PrimaryComplaint" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>The youth's main psychological complaint.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="DrugUseText" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>The type and amount of drugs or alcohol used by the youth in the past 72 hours</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="AllergiesText" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>Description of the youth's allergies</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="GeneralAppearanceText" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>Description of the youth's general physical appearance</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="FoodSensativiitiesText" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>Description of confirmed food sensitivities of the youth</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="AttitudeText" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>Description of the youth's attitude during the  assessment</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="EnvironmentalNeedsText" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>A description of the youth's needs with respect to the physical environment (isolation, negative pressure, one level, incognito, etc.) .</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="LimitationsText" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>Description of the youth's physical limitations or disabilities.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="CapabiliitesText" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>A description of the youth's capability to perform the activities of daily living.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ADADevicesText" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>A list of the assistive devices needed by the youth (e.g., wheelchair, TTY, respiratory devices, etc.)</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Respiratory" type="cadoj:RespiratoryType">
+		<xsd:annotation>
+			<xsd:documentation>Instantiation of Information for Respiratory</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="BreathingDescriptionText" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>Description of breathing sounds heard through the stethoscope (pinging, wheezing, rattling, etc.)</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ShortnessOfBreathFlag" type="cadojHealthAssmtcodes:YesNoType">
+		<xsd:annotation>
+			<xsd:documentation>A yes/no/unknown indicator as to whether the youth experiences shortness of breath.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="BreahingLyingDownText" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>A description of any problems the youth has in breathing while lying down.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="SputumText" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>A description of the youth's sputum (thick, yellow, normal, etc.).</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="RespitoryHistoryText" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>A description of the symptoms and diagnosed respiratory conditions of the youth.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="RespitoryQualityText" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>A short description of how well the youth breathes (slow, labored, fast. Etc.)</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Skin" type="cadoj:SkinType">
+		<xsd:annotation>
+			<xsd:documentation>Instantiation of Information for Skin</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="SkinConditionText" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>A description of the condition of the youth's skin (e.g., dry, scaly, bruised, etc.).</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="TurgorText" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>A description of the fullness or tension produced by the fluid content of blood vessels (an indication of dehydration).</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="EdimaText" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>A description of any swelling and location of the swelling on the youth's body.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ScarsText" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>A description of any scars and location of the scars on the youth's body.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="TatoosText" type="nc:TextType">
+		<xsd:annotation>
+			<xsd:documentation>A description of any tattoos and location of the tattoos on the youth's body.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<!-- Generated IEPD Attributes End Here -->
+</xsd:schema>

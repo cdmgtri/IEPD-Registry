@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Metadata>
+    <URI>http://doj.ca.gov/niem/NoticeParoleHrg/1.0</URI>
+    <Name>Notice of Parole Hearing</Name>
+    <Summary>The Notice of Parole Hearing IEPD was developed for the California Department of Justice - Data Exchange Project.</Summary>
+    <Description>A Notice of Parole Hearing is a form sent from the California Department of Corrections and Rehabilitation to the Prosecutor when a subject is serving a life term and is eligible for parole pursuant to Penal Code 3042.  This communication informs the Prosecutor of the subject's parole eligibility. The Notice of Parole Hearing contains information regarding the type of hearing, parole subject information, and narrative information regarding the process.  The Notice of Parole Hearing is one of 44 IEPDs developed by the California Department of Justice - Data Exchange Project to support information exchange between state and local government organizations throughout the state of California.  It could also be adapted for use in other states.</Description>
+    <Version>1.0</Version>
+    <URL/>
+    <CreationDate>08/01/2008</CreationDate>
+    <LastRevisionDate>01/30/2009</LastRevisionDate>
+    <NextRevisionDate/>
+    <NIEMVersion>2.0</NIEMVersion>
+    <Security>Public</Security>
+    <Maturity>2</Maturity>
+    <Status>IEPD NoticeParoleHrg complete and ready for implementation</Status>
+    <Schedule/>
+    <Lineage/>
+    <Relationships/>
+    <Keywords/>
+    <Domain>Justice</Domain>
+    <ExchangePartners>California state and local criminal justice agencies</ExchangePartners>
+    <Process>If a subject is serving a life term and if the subject is eligible for parole, pursuant to Penal Code 3042, the California Department of Corrections and Rehabilitation informs the Prosecutor of the subject?s parole eligibility.</Process>
+    <TriggeringEvent>Notice of Parole Hearing Complete</TriggeringEvent>
+    <Conditions>If a subject is serving a life term and is eligible for parole.</Conditions>
+    <Endorsements/>
+    <Sponsors>California Department of Justice and other California state and local criminal justice agencies - see master documentation</Sponsors>
+    <Purpose>To inform the Prosecutor of a subject's parole eligibility.</Purpose>
+    <MessageExchangePatterns>document</MessageExchangePatterns>
+    <CommunicationsEnvironment/>
+    <ExchangePartnerCategories>California state and local criminal justice agencies</ExchangePartnerCategories>
+    <AuthoritativeSource>
+        <Category/>
+        <Organization>
+            <Name>California Department of Justice</Name>
+            <Address1>4949 Broadway</Address1>
+            <Address2/>
+            <City>Sacramento</City>
+            <State>CA</State>
+            <Zip>95820</Zip>
+            <Country>United States</Country>
+            <URL>(URL)</URL>
+        </Organization>
+        <PointOfContact>
+            <Name>Business Services Program</Name>
+            <Address1/>
+            <Address2/>
+            <City/>
+            <State/>
+            <Zip/>
+            <Country/>
+            <Phone>(916) 227-4566</Phone>
+            <Fax/>
+            <Email>DataExchange@doj.ca.gov</Email>
+        </PointOfContact>
+    </AuthoritativeSource>
+</Metadata>

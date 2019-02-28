@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:cadojNoticeParoleHrgcodes="http://doj.ca.gov/niem/NoticeParoleHrg/Codes/1.0" xmlns:i="http://niem.gov/niem/appinfo/2.0" targetNamespace="http://doj.ca.gov/niem/NoticeParoleHrg/Codes/1.0" version="1.0.0">
+	<xsd:import namespace="http://niem.gov/niem/structures/2.0" schemaLocation="..\NoticeParoleHrg\niem\structures\2.0\structures.xsd"/>
+	<xsd:import namespace="http://niem.gov/niem/appinfo/2.0" schemaLocation="..\NoticeParoleHrg\niem\appinfo\2.0\appinfo.xsd"/>
+	<xsd:annotation>
+		<xsd:documentation>Codes XML Schema for California Department of Justice Notice of Parole Hearing</xsd:documentation>
+		<xsd:appinfo>
+			<i:ConformantIndicator>true</i:ConformantIndicator>
+		</xsd:appinfo>
+	</xsd:annotation>
+	<!-- CODE LISTS -->
+	<xsd:simpleType name="HearingTypeCodeType">
+		<xsd:annotation>
+			<xsd:documentation/>
+			<xsd:appinfo>
+				<i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+			</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:token">
+			<xsd:enumeration value="Life Prisoner Initial Parole Consideration Hearing (P.C. 3041, 3041.7, 3042)"/>
+			<xsd:enumeration value="Life Prisoner Subsequent Parole Consideration Hearing (P.C. 3041, 3041.7, 3042)"/>
+			<xsd:enumeration value="Life Prisoner Ranclassion Hearing (P.C. 3041.7)"/>
+			<xsd:enumeration value="Extended Term Hearing (P.C. 1170.3(b))"/>
+			<xsd:enumeration value="Other"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="YesNoType">
+		<xsd:annotation>
+			<xsd:documentation/>
+			<xsd:appinfo>
+				<i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+			</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:token">
+			<xsd:enumeration value="Yes"/>
+			<xsd:enumeration value="No"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- TEMPLATE 
+	 <xsd:simpleType name="">
+		<xsd:annotation>
+			 <xsd:documentation></xsd:documentation>
+		  <xsd:appinfo>
+			<i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+		  </xsd:appinfo>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:token">
+          <xsd:enumeration value=""/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	 <xsd:complexType name="">
+		<xsd:annotation>
+		  <xsd:appinfo>
+			<i:Base i:namespace="http://niem.gov/niem/structures/2.0" i:name="Object"/>
+		  </xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleContent>
+		  <xsd:extension base="">
+			<xsd:attributeGroup ref="s:SimpleObjectAttributeGroup"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+-->
+</xsd:schema>

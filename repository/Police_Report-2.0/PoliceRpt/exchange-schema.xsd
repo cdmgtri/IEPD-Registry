@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2008 rel. 2 (http://www.altova.com) by VENDOR (STATE OF CALIFORNIA/DEPT. OF JUSTICE) -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:cadojPoliceRpt="http://doj.ca.gov/niem/PoliceRpt/Document/1.0" xmlns:cadoj="http://doj.ca.gov/niem/PoliceRpt/Extension/1.0" xmlns:s="http://niem.gov/niem/structures/2.0" xmlns:nc="http://niem.gov/niem/niem-core/2.0" xmlns:niem-xsd="http://niem.gov/niem/proxy/xsd/2.0" xmlns:j="http://niem.gov/niem/domains/jxdm/4.0" targetNamespace="http://doj.ca.gov/niem/PoliceRpt/Document/1.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1">
+	<xsd:annotation>
+		<xsd:documentation>This namespace defines the root element and type for the California In-state IEPD</xsd:documentation>
+	</xsd:annotation>
+	<!-- Import namespaces -->
+	<xsd:import namespace="http://doj.ca.gov/niem/PoliceRpt/Extension/1.0" schemaLocation="..\PoliceRpt\extension-schema.xsd"/>
+	<xsd:import namespace="http://niem.gov/niem/structures/2.0" schemaLocation="..\PoliceRpt\niem\structures\2.0\structures.xsd"/>
+	<xsd:import namespace="http://niem.gov/niem/niem-core/2.0" schemaLocation="..\PoliceRpt\niem\niem-core\2.0\niem-core.xsd"/>
+	<xsd:import namespace="http://niem.gov/niem/domains/jxdm/4.0" schemaLocation="..\PoliceRpt\niem\domains\jxdm\4.0\jxdm.xsd"/>
+	<xsd:complexType name="CaliforniaDOJPoliceRptType">
+		<xsd:annotation>
+			<xsd:documentation>This is the document (root) type for the California DOJ Police Report</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="s:ComplexObjectType">
+				<xsd:sequence>
+					<!-- Exchange Elements Generated Start Here -->
+					<xsd:element ref="cadoj:PoliceRpt"/>
+					<xsd:element ref="cadoj:Party"/>
+					<xsd:element ref="nc:Case"/>
+					<xsd:element ref="j:Subject"/>
+					<xsd:element ref="j:Victim"/>
+					<xsd:element ref="cadoj:EnforcementSupervisor"/>
+					<xsd:element ref="j:EnforcementOfficial"/>
+					<xsd:element ref="cadoj:Property"/>
+					<xsd:element ref="cadoj:NonEvidenceProperty"/>
+					<xsd:element ref="cadoj:ReportingDisctrict"/>
+					<xsd:element ref="cadoj:EnforcementAgency"/>
+					<xsd:element ref="cadoj:Incident"/>
+					<xsd:element ref="j:Citation"/>
+					<xsd:element ref="j:Booking"/>
+					<!-- Exchange Elements Generated End Here -->
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<!--Root Element for the Police Report Exchange -->
+	<xsd:element name="CaliforniaDOJPoliceRpt" type="cadojPoliceRpt:CaliforniaDOJPoliceRptType"/>
+</xsd:schema>
